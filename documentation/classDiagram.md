@@ -3,8 +3,10 @@
 title: Diagramme de classe
 ---
 classDiagram
-    User "1"--o"*" Garden : has
-    Garden "1"--o"*" Plant : has
+    User "1" --> "*" Garden : has
+    Garden "1" --> "1" User : belongs to
+    Garden "1" --> "*" Plant :has 
+    Plant "1" --> "1" Garden : belongs to
     class User {
         +idUser
         +username
